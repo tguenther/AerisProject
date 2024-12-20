@@ -2,7 +2,6 @@ package com.project.Aeris.AerisProject;
 
 import java.io.IOException;
 
-import org.apache.catalina.valves.rewrite.Substitution.SubstitutionElement;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +14,6 @@ import com.google.common.collect.ImmutableList;
 import ucar.nc2.Dimension;
 import ucar.nc2.NetcdfFile;
 import ucar.nc2.Variable;
-import ucar.nc2.util.IO;
 import ucar.ma2.Array;
 import ucar.ma2.InvalidRangeException;
 
@@ -76,7 +74,6 @@ class NetCDF {
 	
 			for (int y = 0; y < yDimSize; y++) {
 				for (int x = 0; x < xDimSize; x++) {
-                    System.out.println("timeIndex: " + timeIndex + ", y: " + y + ", x: " + x);
 					double concentrationValue = data.getDouble(data.getIndex().set(0, 0, y, x));
 					datastr += String.format("Concentration at time=%d, z=%d, y=%d, x=%d: %.6f ug/m3%n\n", 
 										timeIndex, zIndex, y, x, concentrationValue * 1e9);
@@ -84,10 +81,8 @@ class NetCDF {
 			}
 
 		} catch (InvalidRangeException e) {
-			// System.out.println("Error reading data: Invalid range specified.");
 			datastr = "Error reading data: Invalid range specified.";
 		} catch (IOException e) {
-			// System.out.println("Error reading data: " + e.getMessage());
 			datastr = "Error reading data: " + e.getMessage();
 		}
 
