@@ -36,6 +36,7 @@ API
 # Implementation Details
 
 # Development Notes
+
 New PC Setup:
 1. Installed necessary software
 
@@ -45,3 +46,17 @@ Lots of Learning:
 1. RESTful API
 1. NetCDF file format
 1. Maven (build/deploy)
+
+# Future enhancements
+
+1. auto generate the html (jinja or similar?)
+
+# Docker Container
+
+The Dockerfile contains details to build the docker container.  Use the following command from the top level project folder to build the docker container:
+
+`docker build -t aeris-project-app .`
+
+Next, to run the container, use the following command:
+
+`docker run -p 8080:8080 aeris-project-app`
