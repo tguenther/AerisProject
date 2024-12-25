@@ -122,7 +122,8 @@ Lots of Learning:
 
 1. auto generate the html (jinja or similar?)
 1. Create an animated gif of the time series data
-1. linear interpolation across descrete time indexes to form a smooth transition
+1. linear interpolation across discrete time indexes to form a smooth transition
+1. update image generation to include reference frame (i.e. lat/lon)
 
 # Docker Container
 
