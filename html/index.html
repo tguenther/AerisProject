@@ -4,21 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Concentration Heat Map</title>
+    <style>
+        label {
+        display: block;
+        width: 130px;
+        }
+    </style>
 </head>
 <body>
     <h1>Generate Heat Map Image</h1>
     
     <form id="imageForm">
         <label for="input1">Time Index:</label>
-        <input type="text" id="input1" name="input1" required><br><br>
+        <input type="text" id="input1" name="input1" size="5" required><br><br>
         
         <label for="input2">Z Index:</label>
-        <input type="text" id="input2" name="input2" required><br><br>
+        <input type="text" id="input2" name="input2" size="5" required><br><br>
         
         <button type="button" onclick="generateImage()">Generate Image</button>
     </form>
-    
-    <div id="imageResult"></div>
 
     <script>
         function generateImage() {

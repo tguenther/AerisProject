@@ -25,7 +25,7 @@ included along with details about the simple UI.
 
 # External API and Entry Points
 
-/
+**/**
 
 Parameters: none
 
@@ -36,7 +36,9 @@ Example:
 
 `http://localhost:8080/`
 
-/get-info
+---
+
+**/get-info**
 
 Parameters:  none
 
@@ -57,7 +59,9 @@ Example:
 
 `http://localhost:8080/get-info`
 
-/get-data
+---
+
+**/get-data**
 
 Parameters:
     timeIndex, integer
@@ -69,7 +73,9 @@ Example:
 
 `http://localhost:8080/get-data?timeIndex=1&zIndex=0`
 
-/get-image
+---
+
+**/get-image**
 
 Parameters:
     timeIndex, integer
