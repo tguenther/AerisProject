@@ -114,11 +114,16 @@ class ConcentrationData {
         // Set background color
         graphics.setPaint(Color.BLACK);
         graphics.fillRect(0, 0, width, height);
-
-        // Draw text or shapes
-        graphics.setPaint(Color.WHITE);
-        graphics.setFont(new Font("Serif", Font.BOLD, 40));
-        graphics.drawString("Hello, Image!", 20, 100);
+    
+        // Draw the data (linearly scaled to [0-255])
+        for (int i = 0; i < timeSeriesData.data.length; i++) {
+            for (int j = 0; j < timeSeriesData.data[i].length; j++) {
+                double value = timeSeriesData.data[i][j];
+                int colorValue = (int) (255 * (value - metaData.minDataValue) / metaData.dataRange);
+                graphics.setPaint(new Color(colorValue, colorValue, colorValue));
+                graphics.fillRect(j * scaleFactor, i * scaleFactor, scaleFactor, scaleFactor);
+            }
+        }
 
         graphics.dispose();
 
